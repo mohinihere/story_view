@@ -240,7 +240,7 @@ class StoryItem {
           child: Stack(
             children: <Widget>[
               Transform.scale(
-                scale: fullScreen ? 1.2 : 1,
+                scale: fullScreen ? 1.3 : 1,
                 child: StoryVideo.url(
                   url,
                   controller: controller,
