@@ -231,6 +231,7 @@ class StoryItem {
     Map<String, dynamic>? requestHeaders,
     Widget? loadingWidget,
     Widget? errorWidget,
+        double? volume,
   }) {
     return StoryItem(
         Container(
