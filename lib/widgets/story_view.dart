@@ -227,7 +227,7 @@ class StoryItem {
     BoxFit imageFit = BoxFit.fitWidth,
     Widget? caption,
     bool shown = false,
-    bool fullScreen = false,
+    double fullScreenScale = 1,
     Map<String, dynamic>? requestHeaders,
     Widget? loadingWidget,
     Widget? errorWidget,
@@ -240,7 +240,7 @@ class StoryItem {
           child: Stack(
             children: <Widget>[
               Transform.scale(
-                scale: fullScreen ? 1.3 : 1,
+                scale: fullScreenScale,
                 child: StoryVideo.url(
                   url,
                   controller: controller,
