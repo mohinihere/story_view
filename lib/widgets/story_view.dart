@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:collection/collection.dart' show IterableExtension;
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../controller/story_controller.dart';
@@ -226,6 +227,7 @@ class StoryItem {
     BoxFit imageFit = BoxFit.fitWidth,
     Widget? caption,
     bool shown = false,
+    bool fullScreen = false,
     Map<String, dynamic>? requestHeaders,
     Widget? loadingWidget,
     Widget? errorWidget,
@@ -236,12 +238,15 @@ class StoryItem {
           color: Colors.black,
           child: Stack(
             children: <Widget>[
-              StoryVideo.url(
-                url,
-                controller: controller,
-                requestHeaders: requestHeaders,
-                loadingWidget: loadingWidget,
-                errorWidget: errorWidget,
+              Transform.scale(
+                scale: fullScreen ? 1.2 : 1,
+                child: StoryVideo.url(
+                  url,
+                  controller: controller,
+                  requestHeaders: requestHeaders,
+                  loadingWidget: loadingWidget,
+                  errorWidget: errorWidget,
+                ),
               ),
               SafeArea(
                 child: Align(
