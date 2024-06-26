@@ -247,6 +247,7 @@ class StoryItem {
                   requestHeaders: requestHeaders,
                   loadingWidget: loadingWidget,
                   errorWidget: errorWidget,
+                  volume: volume
                 ),
               ),
               SafeArea(
